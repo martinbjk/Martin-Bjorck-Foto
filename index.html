@@ -313,7 +313,7 @@
     <div class="about-text fade-in">
       <h2>Om <em>mig</em></h2>
       <div class="about-rule"></div>
-      <p>Jag är Martin Björck, fotograf baserad i Sverige. Jag fångar ögonblick som annars passerar obemärkt — ljusets spel, stämningarnas tystnad, landskapets inre liv.</p>
+      <p>Jag är Martin Björck, fotograf baserad i Sverige.</p>
       <p>Varje bild i galleriet är ett minne, en känsla eller en berättelse. Väljer du att äga en av dem tar du med dig ett stycke av den världen hem.</p>
       <p>Betalning sker enkelt via <strong>Swish</strong>. Klicka på valfri bild, följ stegen — och du får en fullupplöst fil skickad inom 24 timmar.</p>
     </div>
@@ -378,8 +378,14 @@
      Kategorier: natur | stad | portratt | resor | abstrakt
      Om src är null visas en sandton-platshållare.
   ══════════════════════════════════════ */
-  const MY_IMAGES = buildPlaceholders(); // ← Ersätt med dina egna bilder
-
+  
+const MY_IMAGES = [
+  { src: "DSC01194.jpg   ", title: "BILD1", category: "natur" },
+  { src: "DSC01201.jpg", title: "BILD2", category: "natur" },
+  { src: "images/BILD3.jpg", title: "BILD3", category: "natur" },
+  { src: "images/BILD4.jpg", title: "BILD4", category: "natur" },
+  { src: "images/BILD5.jpg", title: "BILD5", category: "natur" }
+];
   /* ── Platshållare (100 st) ── */
   function buildPlaceholders() {
     const titles = [
