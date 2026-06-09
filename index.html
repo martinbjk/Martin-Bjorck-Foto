@@ -395,10 +395,21 @@ const MY_IMAGES = [
   { src: "images/xsurf.jpg", title: "BILD3", category: "natur" },
  
   /* ── Platshållare (100 st) ── */
-  function buildPlaceholders() {
-    const titles = [
+
+      function buildPlaceholders() {
+  const titles = [];
+
+  for (let i = 1; i <= 100; i++) {
+    titles.push(`Bild ${i}`);
+  }
+
+  return titles.map((title, i) => ({
+    src: null,
+    title,
+    category: "natur"
+  }));
+}
       
-    ];
     const cats = ['natur','stad','portratt','resor','abstrakt'];
     const pals = [
       ['#c4a882','#d9c4a0'],['#8b7355','#c4a882'],['#e0ceaf','#a0876a'],
