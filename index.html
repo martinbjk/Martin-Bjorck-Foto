@@ -395,8 +395,7 @@ const MY_IMAGES = [
   { src: "images/xsurf.jpg", title: "BILD3", category: "natur" },
  ];
   /* ── Platshållare (100 st) ── */
-
-      function buildPlaceholders() {
+function buildPlaceholders() {
   const titles = [];
 
   for (let i = 1; i <= 100; i++) {
@@ -409,20 +408,6 @@ const MY_IMAGES = [
     category: "natur"
   }));
 }
-      
-    const cats = ['natur','stad','portratt','resor','abstrakt'];
-    const pals = [
-      ['#c4a882','#d9c4a0'],['#8b7355','#c4a882'],['#e0ceaf','#a0876a'],
-      ['#d9c4a0','#6b5840'],['#b8976e','#e8d5b7'],['#7a6248','#c4a882'],
-      ['#a0876a','#d9c4a0'],['#c4a882','#8b7355'],['#6b5840','#c4a882'],
-      ['#d4bc96','#8b7355']
-    ];
-    return titles.map((title, i) => ({
-      src: null, title,
-      category: cats[i % cats.length],
-      palette: pals[i % pals.length]
-    }));
-  }
 
   /* ══════════════════════════════════════
      RENDER GALLERY
@@ -436,7 +421,7 @@ const MY_IMAGES = [
   }
 
   function makeSVG(img) {
-    const [c1,c2] = img.palette;
+    const [c1,c2] = img.palette || ['#c4a882','#d9c4a0'];
     const h = 420 + (img.title.length % 4) * 80;
     const t = encodeURIComponent(img.title.toUpperCase());
     return `data:image/svg+xml;charset=utf-8,`+encodeURIComponent(
